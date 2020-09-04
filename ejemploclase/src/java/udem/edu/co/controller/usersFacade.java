@@ -17,7 +17,7 @@ import udem.edu.co.entities.users;
 @Stateless
 public class usersFacade extends AbstractFacade<users> {
 
-    @PersistenceContext(unitName = "WebApplication1PU")
+    @PersistenceContext(unitName = "ejemploclasePU")
     private EntityManager em;
 
     @Override

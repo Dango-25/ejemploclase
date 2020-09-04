@@ -17,7 +17,7 @@ import udem.edu.co.entities.roles;
 @Stateless
 public class rolesFacade extends AbstractFacade<roles> {
 
-    @PersistenceContext(unitName = "WebApplication1PU")
+    @PersistenceContext(unitName = "ejemploclasePU")
     private EntityManager em;
 
     @Override

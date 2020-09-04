@@ -31,6 +31,7 @@ public class rolesController implements Serializable {
 
     public rolesController() {
     }
+    
 
     public roles getSelected() {
         if (current == null) {
