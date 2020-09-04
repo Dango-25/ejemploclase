@@ -1,0 +1,27 @@
+
+CREATE SCHEMA `loginweb` ;
+
+CREATE TABLE `loginweb`.`users` (
+  `idusers` INT NOT NULL,
+  `nombre` VARCHAR(100) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idusers`));
+
+CREATE TABLE `loginweb`.`roles` (
+  `idrol` INT NOT NULL,
+  `rol` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idrol`));
+
+ALTER TABLE `loginweb`.`users` 
+ADD COLUMN `idrol` INT NULL AFTER `password`,
+CHANGE COLUMN `idusers` `iduser` INT NOT NULL ,
+ADD INDEX `idrol_idx` (`idrol` ASC) VISIBLE;
+;
+ALTER TABLE `loginweb`.`users` 
+ADD CONSTRAINT `idrol`
+  FOREIGN KEY (`idrol`)
+  REFERENCES `loginweb`.`roles` (`idrol`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+

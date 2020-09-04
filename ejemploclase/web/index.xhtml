@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <h:outputLabel for="mname">Login web:</h:outputLabel>
+        <h:inputText id="user">user</h:inputText>
+        <h:outputLabel for="mname">Password:</h:outputLabel>
+        <h:inputText id="user">Password</h:inputText>
+        <h:commandButton value = "Click Me!" onclick = "alert('Hello World!');" />         
+        <br />
+        <h:link outcome="/roles/List" value="Show All roles Items"/>
+        <br />
+        <h:link outcome="/users/List" value="Show All users Items"/>
+    </h:body>
+
+
+</html>
+

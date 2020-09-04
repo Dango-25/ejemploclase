@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditusersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditusersLabel_idUsers}" for="idUsers" />
+                    <h:inputText id="idUsers" value="#{usersController.selected.idUsers}" title="#{bundle.EditusersTitle_idUsers}" required="true" requiredMessage="#{bundle.EditusersRequiredMessage_idUsers}"/>
+                    <h:outputLabel value="#{bundle.EditusersLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{usersController.selected.nombre}" title="#{bundle.EditusersTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.EditusersLabel_usuario}" for="usuario" />
+                    <h:inputText id="usuario" value="#{usersController.selected.usuario}" title="#{bundle.EditusersTitle_usuario}" />
+                    <h:outputLabel value="#{bundle.EditusersLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{usersController.selected.password}" title="#{bundle.EditusersTitle_password}" />
+                </h:panelGrid>
+                <h:commandLink action="#{usersController.update}" value="#{bundle.EditusersSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditusersViewLink}"/>
+                <br />
+                <h:commandLink action="#{usersController.prepareList}" value="#{bundle.EditusersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditusersIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
